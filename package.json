@@ -1,0 +1,10 @@
+{
+  "name": "typescript_tdd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Loïc Chau <loicch@theodo.fr>",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^4.9.4"
+  }
+}
