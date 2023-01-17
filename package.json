@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Loïc Chau <loicch@theodo.fr>",
   "license": "MIT",
+  "scripts": {
+    "test": "tsc --noEmit"
+  },
   "dependencies": {
     "typescript": "^4.9.4"
   }
