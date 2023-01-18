@@ -15,3 +15,11 @@ namespace test {
   export type testNonObjectShouldReturnNever = Expect<Equals<never, output>>;
 }
 
+namespace test {
+  const input = { foo: "bar", bar: "baz" } as const;
+  type output = TranslationKeysExtractor<typeof input>;
+
+  type testMultipleRootLevelKeysAreExtracted = Expect<
+    Equals<"foo" | "bar", output>
+  >;
+}
