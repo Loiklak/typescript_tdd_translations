@@ -23,3 +23,10 @@ namespace test {
     Equals<"foo" | "bar", output>
   >;
 }
+
+namespace test {
+  const input = { foo: { bar: "baz" } } as const;
+  type output = TranslationKeysExtractor<typeof input>;
+
+  type testSingleNestedKeyIsExtracted = Expect<Equals<"foo.bar", output>>;
+}
