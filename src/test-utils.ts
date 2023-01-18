@@ -17,6 +17,3 @@ export type Equals<X, Y> =
  * const expectFunction = (arg: true) => typeof arg;
  */
 export type Expect<T extends true> = T;
-
-// I make tsc fail 🤕
-type Test = Expect<false>;
