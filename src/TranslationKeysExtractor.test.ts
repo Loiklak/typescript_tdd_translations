@@ -8,3 +8,11 @@ namespace test {
   type testSingleRootLevelKeyIsExtracted = Expect<Equals<"foo", output>>;
 }
 
+namespace test {
+  const input = "foo" as const;
+  type output = TranslationKeysExtractor<typeof input>;
+
+  // What is never ?
+  export type testNonObjectShouldReturnNever = Expect<Equals<never, output>>;
+}
+

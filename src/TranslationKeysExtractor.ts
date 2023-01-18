@@ -1,1 +1,1 @@
-export type TranslationKeysExtractor<Translations> = any
+export type TranslationKeysExtractor<Translations> = "foo"
