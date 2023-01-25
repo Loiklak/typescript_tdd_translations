@@ -13,6 +13,11 @@ type Join<T, U> = T extends string
 export type TranslationKeysExtractor<Translations> =
   Translations extends TranslationShape ? Extractor<Translations> : never;
 
-type Extractor<Translations> = ValueOf<Translations> extends string
-  ? keyof Translations
-  : Join<keyof Translations, TranslationKeysExtractor<ValueOf<Translations>>>;
+// prettier-ignore
+type Extractor<Translations> = keyof {[
+  Key in keyof Translations as (
+    Translations[Key] extends TranslationShape
+      ? Join<Key, Extractor<Translations[Key]>>
+      : Key
+  )
+]: never;};
